@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pirate Paradise
 
-## Getting Started
+Sitio web para Pirate Paradise, un proyecto de inversión en Prado, Tolima, Colombia. El sitio ofrece oportunidades de inversión en cabañas, restaurantes, club náutico y más en la hermosa Represa del Río Prado.
 
-First, run the development server:
+## Características
 
+- Diseño responsivo para dispositivos móviles y de escritorio
+- Menú de navegación inmersivo para móviles
+- Header transparente que se vuelve fijo al desplazarse
+- Sección Hero con video de fondo
+- Sección de ubicación con mapa
+- Tema pirata con colores negro, dorado y plateado
+
+## Tecnologías utilizadas
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React para iconos
+
+## Instalación
+
+1. Clona el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tu-usuario/pirate-paradise.git
+cd pirate-paradise
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Ejecuta el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+- `/src/app`: Páginas y componentes principales
+- `/src/components`: Componentes reutilizables
+- `/src/components/layout`: Componentes de layout (Header, Footer)
+- `/public`: Archivos estáticos (imágenes, videos, fuentes)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Personalización
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Fuentes
+La fuente pirata se encuentra en `/public/fonts/pirate-font.woff2`. Puedes reemplazarla con otra fuente pirata de tu elección.
 
-## Deploy on Vercel
+### Colores
+Los colores principales se definen en `src/app/globals.css`:
+- Negro: #000000
+- Dorado: #D4AF37
+- Plateado: #C0C0C0
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contenido
+Actualiza el contenido en los componentes correspondientes:
+- Hero: `src/app/home/Hero.tsx`
+- Ubicación: `src/app/home/Ubication.tsx`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licencia
+
+MIT
