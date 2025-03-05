@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/layout/header/Header";
-import { ThemeProvider } from "@/context/ThemeContext";
+import "./globals.css";
+import { Montserrat, Pirata_One } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const pirataOne = Pirata_One({
+  variable: "--font-pirata-one",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
   title: "Pirate Paradise - Inversiones en Prado, Tolima",
+  icons: {
+    icon: "/favicon.ico",
+  },
   description: "Descubre oportunidades de inversión en cabañas, restaurantes y club náutico en la hermosa Represa del Río Prado, Tolima.",
 };
 
@@ -27,12 +31,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${pirataOne.variable} antialiased`}
       >
-        <ThemeProvider>
           <Header />
           <main>{children}</main>
-        </ThemeProvider>
       </body>
     </html>
   );

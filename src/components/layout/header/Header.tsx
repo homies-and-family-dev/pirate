@@ -1,165 +1,134 @@
 "use client";
-
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Crown } from "lucide-react";
-import NavLink from "./NavLink";
+import { CoinsIcon, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Prevenir scroll cuando el menú móvil está abierto
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
   }, [isMobileMenuOpen]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
+  const closeMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const navLinks = [
+    { href: "/", label: "Ubicación", shortLabel: "Ubicación" },
+    { href: "/", label: "Rentabilidad", shortLabel: "Rentabilidad" },
+    { href: "/", label: "Modelos de negocio", shortLabel: "Modelos" },
+    { href: "/", label: "Financiación", shortLabel: "Financiación" },
+    { href: "/", label: "Galería", shortLabel: "Galería" },
+  ];
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-black/95 backdrop-blur-lg"
-          : "bg-gradient-to-b from-black/70 via-black/40 to-transparent"
-      } py-4`}
+      className={`
+        fixed top-0 left-0 right-0 z-50 
+        transition-all duration-500
+        ${isScrolled
+          ? "bg-black/90 backdrop-blur-lg shadow-lg shadow-black/20 duration-300"
+          : "bg-gradient-to-b from-black/80 via-black/50 to-transparent duration-300"
+        }
+      `}
     >
-      {/* Elementos decorativos del header */}
-      <div className="absolute inset-0 overflow-hidden opacity-15">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-      </div>
-
-      <div className="container mx-auto px-4 flex items-center justify-between relative z-10">
-        {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden">
-            <Crown className="w-7 h-7 md:w-8 md:h-8 text-gold group-hover:scale-110 transition-transform duration-500" />
-          </div>
-          <div className="flex flex-col ml-1">
-            <span className="text-xl md:text-2xl font-medieval text-white tracking-wide">
-              Pirate Paradise
-            </span>
-            <span className="text-xs md:text-sm tracking-wide font-medieval text-gold/70">
-              Invierte en tu futuro
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation estilo medieval */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {["HOME", "Ubicación", "Eventos", "Blog", "Galeria", "Tienda"].map((item) => (
-            <NavLink 
-              key={item} 
-              href={`/${item.toLowerCase().replace(/ /g, '-')}`} 
-              style="medieval"
-            >
-              {item}
-            </NavLink>
-          ))}
-          
-          {/* Botón de membership similar a la imagen */}
-          <Link
-            href="/become-a-member"
-            className="flex items-center justify-center px-6 py-2 bg-transparent border border-gold text-gold hover:bg-gold/10 transition-colors duration-300 font-medieval tracking-wide text-sm rounded-none"
-          >
-            <Crown className="w-4 h-4 mr-2" />
-            Quiero invertir
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden relative z-50 p-2.5 rounded-full bg-black/50 backdrop-blur-md border border-gold/20 hover:border-gold/40 transition-all duration-300 group"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X size={24} className="text-gold transition-colors duration-300" />
-          ) : (
-            <Menu size={24} className="text-gold transition-colors duration-300" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu - Pantalla completa */}
-      <div 
-        className={`
-          fixed inset-0 z-40 
-          ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-          transition-opacity duration-500
-        `}
-      >
-        {/* Fondo medieval oscuro */}
-        <div className={`
-          absolute inset-0 bg-black/95 backdrop-blur-lg
-          ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}
-          transition-opacity duration-500
-        `}>
-          {/* Textura medieval */}
-          <div className="absolute inset-0 bg-[url('/images/texture-dark.png')] opacity-20"></div>
-          
-          {/* Decoraciones medievales */}
-          <div className="absolute inset-0 border-8 border-gold/5 m-8"></div>
-        </div>
-
-        {/* Contenido del menú móvil */}
-        <div className={`
-          relative h-full flex flex-col items-center justify-center p-8
-          transform transition-transform duration-500
-          ${isMobileMenuOpen ? 'translate-y-0' : 'translate-y-24'}
-        `}>
-          <nav className="flex flex-col items-center space-y-6 py-10">
-            {/* Título del menú */}
-            <div className="relative mb-8">
-              <h2 className="text-3xl font-medieval text-gold">
-                NAVIGATION
-              </h2>
-              <div className="mt-2 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+      <div className="relative">
+        {/* Border frame */}
+        <div className="mx-4 sm:mx-6 md:mx-0 2xl:mx-20">
+          <nav className="flex items-center justify-between px-4 sm:px-6 md:px-10 2xl:px-20 py-3 relative">
+            <Link href="/" className="relative group z-10 flex-shrink-0">
+              <Image 
+                src="/images/logo.png" 
+                alt="Pirate Paradise Logo" 
+                width={64} 
+                height={64}
+                className="w-full h-full max-w-16 md:max-w-20 transform group-hover:scale-110 transition-transform duration-300"
+              />  
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:block flex-grow mx-4 lg:mx-8">
+              <ul className="flex items-center justify-center flex-wrap gap-x-4 lg:gap-x-8 xl:gap-x-12 gap-y-2 text-[#f2e0c8] transition-colors duration-300 uppercase text-sm lg:text-base font-medium">
+                {navLinks.map((link, index) => (
+                  <li key={index} className="whitespace-nowrap">
+                    <Link 
+                      href={link.href} 
+                      className="relative group z-10 hover:text-[#bd8d4c] transition-colors duration-300 py-2 block"
+                      title={link.label}
+                    >
+                      {link.shortLabel}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
             
-            {/* Enlaces de navegación */}
-            <div className="grid grid-cols-1 gap-6 w-full max-w-xs">
-              {[
-                "HOME", "ABOUT US", "EVENTS", "BLOG", "GALLERY", "SHOP", "BECOME A MEMBER"
-              ].map((item, index) => (
-                <div 
-                  key={item}
-                  className="transform transition-transform duration-500"
-                  style={{ 
-                    transitionDelay: `${index * 100}ms`,
-                    transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)'
-                  }}
-                >
-                  <NavLink 
-                    href={`/${item.toLowerCase().replace(/ /g, '-')}`} 
-                    isMobile={true}
-                    style="medieval" 
-                    onClick={closeMobileMenu}
-                  >
-                    {item}
-                  </NavLink>
-                </div>
-              ))}
+            <Link 
+              href="/" 
+              className="hidden uppercase md:flex items-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-4 lg:px-6 py-2 text-sm lg:text-base font-medium rounded-full transition-colors duration-300 flex-shrink-0 whitespace-nowrap"
+            >
+              <CoinsIcon className="w-5 h-5 mr-2" />
+              Invertir
+            </Link>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-[#f2e0c8] z-50"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-8 h-8" />
+              ) : (
+                <Menu className="w-8 h-8" />
+              )}
+            </button>
+            
+            {/* Mobile Menu Overlay */}
+            <div 
+              className={`
+                fixed inset-0 bg-black/95 backdrop-blur-lg z-40 
+                transition-transform duration-500 ease-in-out
+                flex flex-col items-center justify-center
+                ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+                md:hidden
+                border border-[#bd8d4c]/30
+              `}
+            >
+              <div className="flex flex-col items-center justify-center h-full w-full">
+                <ul className="flex flex-col items-center gap-8 text-[#f2e0c8] uppercase text-xl font-medium">
+                  {navLinks.map((link, index) => (
+                    <li key={index} className="w-full text-center">
+                      <Link 
+                        href={link.href} 
+                        className="relative group z-10 hover:text-[#bd8d4c] transition-colors duration-300 block py-2"
+                        onClick={closeMenu}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                  <li className="mt-8 w-full text-center">
+                    <Link 
+                      href="/" 
+                      className="flex items-center justify-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-6 py-3 text-lg font-medium rounded-full transition-colors duration-300 mx-auto"
+                      onClick={closeMenu}
+                    >
+                      <CoinsIcon className="w-6 h-6 mr-2" />
+                      Invertir
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </nav>
         </div>

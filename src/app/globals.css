@@ -1,10 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-pirata-one: var(--font-pirata-one);
+  --font-montserrat: var(--font-montserrat);
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.font-pirata-one {
+  font-family: var(--font-pirata-one);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-pirata-one);
+}
+
+p, span, a, li, button, input, textarea {
+  font-family: var(--font-montserrat);
+}
+
+
