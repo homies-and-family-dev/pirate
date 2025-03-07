@@ -48,7 +48,7 @@ export default function Areas() {
     ];
 
     return (
-        <section className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
+        <section id="modelos" className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
             {/* Elementos decorativos de fondo */}
             <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
             <div className="absolute bottom-0 left-0 w-full h-12 z-10 opacity-30"></div>

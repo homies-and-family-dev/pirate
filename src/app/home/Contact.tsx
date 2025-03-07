@@ -54,19 +54,25 @@ export default function Contact() {
         {
             name: "Sede Principal Ibagué",
             address: "Calle 60 #5-124, Edificio El Tesoro, Local 101",
-            image: "/images/renders/PIRATE PARADISE IMAGEN 1.jpg",
+            image: "/images/sedes/florida.webp",
             hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 1:00 PM"
         },
         {
             name: "Oficina Comercial Bogotá",
             address: "Av. Carrera 15 #124-30, Torre Empresarial, Oficina 504",
-            image: "/images/renders/PIRATE PARADISE IMAGEN 2.jpg",
+            image: "/images/sedes/chicho.webp",
             hours: "Lunes a Viernes: 9:00 AM - 5:00 PM"
         },
         {
             name: "Punto de Información Melgar",
             address: "Centro Comercial El Paraíso, Local 23, Vía Principal",
-            image: "/images/renders/PIRATE PARADISE IMAGEN 3.jpg",
+            image: "/images/sedes/callcenter.webp",
+            hours: "Jueves a Domingo: 10:00 AM - 7:00 PM"
+        },
+        {
+            name: "Punto de Información Melgar",
+            address: "Centro Comercial El Paraíso, Local 23, Vía Principal",
+            image: "/images/sedes/prado.webp",
             hours: "Jueves a Domingo: 10:00 AM - 7:00 PM"
         }
     ];
@@ -79,7 +85,7 @@ export default function Contact() {
     ];
 
     return (
-        <section className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
+        <section id="contacto" className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
             {/* Elementos decorativos de fondo */}
             <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
             <div className="absolute bottom-0 left-0 w-full h-12 z-10 opacity-30"></div>

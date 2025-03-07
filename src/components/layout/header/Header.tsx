@@ -23,11 +23,11 @@ export default function Header() {
   };
 
   const navLinks = [
-    { href: "/", label: "Ubicación", shortLabel: "Ubicación" },
-    { href: "/", label: "Rentabilidad", shortLabel: "Rentabilidad" },
-    { href: "/", label: "Modelos de negocio", shortLabel: "Modelos" },
-    { href: "/", label: "Financiación", shortLabel: "Financiación" },
-    { href: "/", label: "Galería", shortLabel: "Galería" },
+    { href: "/#ubicacion", label: "Ubicación", shortLabel: "Ubicación" },
+    { href: "/#rentabilidad", label: "Rentabilidad", shortLabel: "Rentabilidad" },
+    { href: "/#modelos", label: "Modelos de negocio", shortLabel: "Modelos" },
+    { href: "/#financiamiento", label: "Financiación", shortLabel: "Financiación" },
+    { href: "/#galeria", label: "Galería", shortLabel: "Galería" },
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function Header() {
             </div>
             
             <Link 
-              href="/" 
+              href="/#contacto" 
               className="hidden uppercase md:flex items-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-4 lg:px-6 py-2 text-sm lg:text-base font-medium rounded-full transition-colors duration-300 flex-shrink-0 whitespace-nowrap"
             >
               <CoinsIcon className="w-5 h-5 mr-2" />
@@ -119,7 +119,7 @@ export default function Header() {
                   ))}
                   <li className="mt-8 w-full text-center">
                     <Link 
-                      href="/" 
+                      href="/#contacto" 
                       className="flex items-center justify-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-6 py-3 text-lg font-medium rounded-full transition-colors duration-300 mx-auto"
                       onClick={closeMenu}
                     >
