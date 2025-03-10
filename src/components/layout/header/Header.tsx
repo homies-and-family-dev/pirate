@@ -6,13 +6,33 @@ import { CoinsIcon, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Determinar si el usuario ha scrolleado lo suficiente para cambiar el estilo
+      setIsScrolled(currentScrollY > 50);
+      
+      // Determinar la dirección del scroll
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up - mostrar el header
+        setIsVisible(true);
+      } else if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+        // Scrolling down y ha pasado el umbral - ocultar el header
+        setIsVisible(false);
+      }
+      
+      // Actualizar la posición del último scroll
+      setLastScrollY(currentScrollY);
+    };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
@@ -36,15 +56,19 @@ export default function Header() {
         fixed top-0 left-0 right-0 z-50 
         transition-all duration-500
         ${isScrolled
-          ? "bg-black/90 backdrop-blur-lg shadow-lg shadow-black/20 duration-300"
-          : "bg-gradient-to-b from-black/80 via-black/50 to-transparent duration-300"
+          ? "bg-black/90 backdrop-blur-lg shadow-lg shadow-black/20"
+          : "bg-gradient-to-b from-black/80 via-black/50 to-transparent"
+        }
+        ${isVisible 
+          ? "translate-y-0 opacity-100" 
+          : "-translate-y-full opacity-0"
         }
       `}
     >
       <div className="relative">
         {/* Border frame */}
         <div className="mx-4 sm:mx-6 md:mx-0 2xl:mx-20">
-          <nav className="flex items-center justify-between px-4 sm:px-6 md:px-10 2xl:px-20 py-3 relative">
+          <nav className="flex items-center justify-between px-4 sm:px-6 md:px-10 2xl:px-20 py-1 relative">
             <Link href="/" className="relative group z-10 flex-shrink-0">
               <Image 
                 src="/images/logo.png" 

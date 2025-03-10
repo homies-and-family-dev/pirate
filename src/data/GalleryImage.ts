@@ -3,32 +3,32 @@ import { GalleryImage } from "@/types/GalleryTypes";
 export const galleryImages: GalleryImage[] = [
     {
         id: "img1",
-        title: "Muelle Privado",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 7.jpg"
+        title: "Parque temático",
+        imagePath: "/images/renders/parquetematico.jpg"
     },
     {
         id: "img2",
-        title: "Vistas Panorámicas",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 9.jpg"
+        title: "Cabañas de lujo",
+        imagePath: "/images/renders/cabania.jpg"
     },
     {
         id: "img3",
-        title: "Restaurante Gourmet",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 11.jpg"
+        title: "Restaurante y Bar",
+        imagePath: "/images/renders/gastrobar.jpg"
     },
     {
         id: "img4",
-        title: "Navegación",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 13.jpg"
+        title: "Club Náutico",
+        imagePath: "/images/renders/clubnautico.jpg"
     },
     {
         id: "img5",
-        title: "Piscina Infinity",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 15.jpg"
+        title: "Piscina adultos y niños",
+        imagePath: "/images/renders/piscina.jpg"
     },
     {
         id: "img6",
-        title: "Salón de Eventos",
-        imagePath: "/images/renders/PIRATE PARADISE IMAGEN 17.jpg"
+        title: "Zona de Eventos",
+        imagePath: "/images/renders/eventos.jpg"
     }
 ];

@@ -53,25 +53,25 @@ export default function Contact() {
     const officeLocations = [
         {
             name: "Sede Principal Ibagué",
-            address: "Calle 60 #5-124, Edificio El Tesoro, Local 101",
+            address: "Cra 5 Sur #83-40 local 8",
             image: "/images/sedes/florida.webp",
-            hours: "Lunes a Viernes: 8:00 AM - 6:00 PM\nSábados: 9:00 AM - 1:00 PM"
+            hours: "Lunes a Viernes: 9:00 AM - 5:00 PM\nSábados: 9:00 AM - 1:00 PM"
         },
         {
             name: "Oficina Comercial Bogotá",
-            address: "Av. Carrera 15 #124-30, Torre Empresarial, Oficina 504",
+            address: "Calle 90# 11A-04",
             image: "/images/sedes/chicho.webp",
             hours: "Lunes a Viernes: 9:00 AM - 5:00 PM"
         },
         {
-            name: "Punto de Información Melgar",
-            address: "Centro Comercial El Paraíso, Local 23, Vía Principal",
+            name: "Call Center Bogotá",
+            address: "Carrera 15# 93A - 84 Oficina 406",
             image: "/images/sedes/callcenter.webp",
-            hours: "Jueves a Domingo: 10:00 AM - 7:00 PM"
+            hours: "Lunes a Viernes: 9:00 AM - 5:00 PM"
         },
         {
-            name: "Punto de Información Melgar",
-            address: "Centro Comercial El Paraíso, Local 23, Vía Principal",
+            name: "Isla de atención en Prado Tolima",
+            address: "Isla de atención en muelle",
             image: "/images/sedes/prado.webp",
             hours: "Jueves a Domingo: 10:00 AM - 7:00 PM"
         }

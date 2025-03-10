@@ -20,28 +20,28 @@ export default function Alliance() {
         {
             id: "pomar",
             name: "Constructora EL POMAR",
-            logo: "/images/logo-pomar.png",
+            logo: "/images/logos/logopomar.webp",
             role: "Desarrollo y Construcción",
             description: "27 años de experiencia en construcción en Tolima."
         },
         {
             id: "monteazul",
             name: "MonteAzul Group",
-            logo: "/images/logo-financiera.png",
+            logo: "/images/logos/logomonteazul.png",
             role: "Respaldo Financiero",
             description: "Solidez económica para proyectos inmobiliarios."
         },
         {
             id: "homies",
             name: "Homies and family",
-            logo: "/images/logo-arquitectos.png",
+            logo: "/images/logos/homies.webp",
             role: "Diseño Arquitectónico",
             description: "Especialistas en espacios náuticos y residenciales."
         },
         {
             id: "familygrill",
             name: "Family Grill",
-            logo: "/images/logo-ambiental.png",
+            logo: "/images/logos/logofamilygrill.png",
             role: "Gestión Ambiental",
             description: "Sostenibilidad para proyectos turísticos."
         }
