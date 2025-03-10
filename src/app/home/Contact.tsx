@@ -301,49 +301,6 @@ export default function Contact() {
                                         </div>
                                     </motion.div>
                                 ))}
-                                
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.3 }}
-                                    className="md:col-span-2 bg-[#f5ecd9] rounded-xl p-5 shadow-lg border border-[#bd8d4c]/20 relative overflow-hidden"
-                                >
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#bd8d4c]/10 rounded-full -mr-8 -mt-8"></div>
-                                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-[#bd8d4c]/10 rounded-full -ml-6 -mb-6"></div>
-                                    
-                                    <div className="flex flex-col md:flex-row items-start gap-4 relative z-10">
-                                        <div className="md:w-1/2">
-                                            <h4 className="font-pirate text-xl text-[#8B4513] flex items-center">
-                                                <Building className="w-5 h-5 text-[#bd8d4c] mr-2" />
-                                                Oficina Central
-                                            </h4>
-                                            <p className="text-[#bd8d4c] font-medium mt-1">Constructora EL POMAR</p>
-                                            <div className="mt-3 space-y-2 text-sm text-[#5A3921]">
-                                                <div className="flex items-start">
-                                                    <MapPin className="w-4 h-4 text-[#bd8d4c] mt-0.5 mr-2 flex-shrink-0" />
-                                                    <span>Calle 42 #8-75, Edificio Empresarial, Piso 5<br />Ibagué, Tolima</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="md:w-1/2 mt-3 md:mt-0">
-                                            <div className="space-y-2 text-sm text-[#5A3921]">
-                                                <div className="flex items-start">
-                                                    <Phone className="w-4 h-4 text-[#bd8d4c] mt-0.5 mr-2 flex-shrink-0" />
-                                                    <span>(608) 277-8899</span>
-                                                </div>
-                                                <div className="flex items-start">
-                                                    <Mail className="w-4 h-4 text-[#bd8d4c] mt-0.5 mr-2 flex-shrink-0" />
-                                                    <span>info@elpomar.com.co</span>
-                                                </div>
-                                                <div className="flex items-start">
-                                                    <Clock className="w-4 h-4 text-[#bd8d4c] mt-0.5 mr-2 flex-shrink-0" />
-                                                    <span>Lunes a Viernes: 8:00 AM - 5:30 PM</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
                             </div>
                         </motion.div>
                     </div>

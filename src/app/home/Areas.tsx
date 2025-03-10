@@ -20,8 +20,8 @@ export default function Areas() {
             bathrooms: 2,
             features: ["Terraza privada", "Vista al lago", "Cocina integrada", "Sala de estar"],
             description: "Diseño moderno con amplios espacios abiertos, ideal para parejas o familias pequeñas.",
-            imagePath: "/images/renders/CABAÑA TIPO 1 IMAGEN 1.jpg",
-            floorPlanPath: "/images/renders/CABAÑA TIPO 1 IMAGEN 7.jpg"
+            imagePath: "/images/renders/cabaniatipo12.jpg",
+            floorPlanPath: "/images/renders/cabaniatipo1.jpg"
         },
         {
             id: "tipo2",
@@ -31,8 +31,8 @@ export default function Areas() {
             bathrooms: 2,
             features: ["Piscina privada", "Terraza ampliada", "Área de BBQ", "Sala-comedor integrado"],
             description: "Espacios versátiles con piscina privada y amplias áreas sociales para disfrutar en familia.",
-            imagePath: "/images/renders/CABAÑA TIPO 2 IMAGEN 1.jpg",
-            floorPlanPath: "/images/renders/CABAÑA TIPO 2 IMAGEN 7.jpg"
+            imagePath: "/images/renders/cabaniatipo22.jpg",
+            floorPlanPath: "/images/renders/cabaniatipo2.jpg"
         },
         {
             id: "tipo3",
@@ -42,8 +42,8 @@ export default function Areas() {
             bathrooms: 3,
             features: ["Piscina infinita", "Terraza panorámica", "Estudio/oficina", "Vestidor principal"],
             description: "Nuestra opción más exclusiva con acabados premium y vistas panorámicas al lago.",
-            imagePath: "/images/renders/CABAÑA TIPO 3 IMAGEN 1.jpg",
-            floorPlanPath: "/images/renders/CABAÑA TIPO 3 IMAGEN 7.jpg"
+            imagePath: "/images/renders/cabaniatipo33.jpg",
+            floorPlanPath: "/images/renders/cabaniatipo3.jpg"
         }
     ];
 
@@ -153,7 +153,7 @@ export default function Areas() {
                                 </div>
                                 
                                 <Link 
-                                    href={`/cabanas/${cabin.id}`}
+                                    href={`/#contacto`}
                                     className="w-full inline-flex items-center justify-center bg-transparent border border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#8B4513] hover:text-[#f5ecd9] px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300"
                                 >
                                     Ver detalles
@@ -172,7 +172,7 @@ export default function Areas() {
                     transition={{ duration: 0.7, delay: 0.3 }}
                 >
                     <Link 
-                        href="/cabanas"
+                        href="/#contacto"
                         className="inline-flex items-center bg-[#bd8d4c] hover:bg-[#a57a3b] text-white px-6 py-2 text-base font-medium rounded-full transition-colors duration-300"
                     >
                         Ver todas las cabañas

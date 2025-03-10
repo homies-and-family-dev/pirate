@@ -139,7 +139,7 @@ export default function Financement() {
                                 </ul>
                                 
                                 <Link 
-                                    href="/" 
+                                    href="/#contacto" 
                                     className={`block text-center py-3 px-4 rounded-full transition-colors duration-300 ${
                                         option.recommended 
                                             ? "bg-[#bd8d4c] text-white hover:bg-[#a67a3e]" 
@@ -183,7 +183,7 @@ export default function Financement() {
                     transition={{ duration: 0.7, delay: 0.7 }}
                 >
                     <Link 
-                        href="/" 
+                        href="/#contacto" 
                         className="inline-flex items-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#8B4513] hover:text-[#f5ecd9] px-8 py-3 text-lg font-medium rounded-full transition-colors duration-300"
                     >
                         <CreditCard className="w-5 h-5 mr-2" />

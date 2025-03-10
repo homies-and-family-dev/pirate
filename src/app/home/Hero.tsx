@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative mb-8"
           >
-            <h1 className="text-5xl md:text-8xl font-semibold uppercase text-white tracking-wide leading-none mb-2">
+            <h1 className="text-5xl md:text-8xl font-medium uppercase text-white tracking-wide leading-none mb-2">
               Pirate Paradise
             </h1>
           </motion.div>
@@ -72,7 +72,7 @@ export default function Hero() {
           Descubre la ruta para encontrar la ubicación el tesoro, con una de las mejores inversiones y valorizaciones del pais.
           </p>
         </motion.div>
-        <Link href="/" className="inline-block bg-[#bd8d4c] border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-6 py-2 text-lg font-medium rounded-full">Quiero Invertir</Link>
+        <Link href="/#contacto" className="inline-block bg-[#bd8d4c] border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-6 py-2 text-lg font-medium rounded-full">Quiero Invertir</Link>
       </div>
     </section>
   );

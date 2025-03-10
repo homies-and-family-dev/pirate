@@ -5,8 +5,15 @@
   --font-montserrat: var(--font-montserrat);
 }
 
-body {
+:root {
+  --primary-color: #bd8d4c;
+  --secondary-color: #efe1cb;
+  --tertiary-color: #e4d4b9;
+}
+
+html, body {
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .font-pirata-one {
