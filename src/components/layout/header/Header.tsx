@@ -106,7 +106,7 @@ export default function Header() {
             
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-[#f2e0c8] z-50"
+              className="md:hidden  text-[#f2e0c8] z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
@@ -120,12 +120,11 @@ export default function Header() {
             {/* Mobile Menu Overlay */}
             <div 
               className={`
-                fixed inset-0 bg-black/95 backdrop-blur-lg z-40 
-                transition-transform duration-500 ease-in-out
-                flex flex-col items-center justify-center
-                ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+                fixed inset-0 h-screen w-full bg-black z-40 
+                transition-all duration-500 ease-in-out
+                flex flex-col
+                ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
                 md:hidden
-                border border-[#bd8d4c]/30
               `}
             >
               <div className="flex flex-col items-center justify-center h-full w-full">
