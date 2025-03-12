@@ -42,7 +42,7 @@ const DecorativeTitle = ({ title }: DecorativeTitleProps) => {
             </div>
             <div className="h-1 w-32 md:w-48 mx-auto bg-gradient-to-r from-transparent via-[#bd8d4c] to-transparent mt-4"></div>
             <p className="text-[#bd8d4c]/80 mt-2 font-serif italic text-sm md:text-base">
-                Descubre los tesoros que aguardan en nuestro paraíso pirata
+            Descubre las amenidades de este exclusivo proyecto
             </p>
         </div>
     );

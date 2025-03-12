@@ -151,13 +151,6 @@ export default function Areas() {
                                         ))}
                                     </div>
                                 </div>
-                                
-                                <Link 
-                                    href={`/#contacto`}
-                                    className="w-full inline-flex items-center justify-center bg-transparent border border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#8B4513] hover:text-[#f5ecd9] px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300"
-                                >
-                                    Ver detalles
-                                </Link>
                             </div>
                         </motion.div>
                     ))}

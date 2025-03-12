@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/Header";
 import "./globals.css";
-import { Montserrat, Pirata_One } from "next/font/google";
+import { Montserrat, Spectral_SC } from "next/font/google";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -9,10 +9,10 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
 });
 
-const pirataOne = Pirata_One({
-  variable: "--font-pirata-one",
+const spectralSC = Spectral_SC({
+  variable: "--font-spectral-sc",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${montserrat.variable} ${pirataOne.variable} antialiased`}
+        className={`${montserrat.variable} ${spectralSC.variable} antialiased`}
       >
           <Header />
           <main>{children}</main>

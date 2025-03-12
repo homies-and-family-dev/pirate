@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-pirata-one: var(--font-pirata-one);
+  --font-spectral-sc: var(--font-spectral-sc);
   --font-montserrat: var(--font-montserrat);
 }
 
@@ -16,8 +16,8 @@ html, body {
   scroll-behavior: smooth;
 }
 
-.font-pirata-one {
-  font-family: var(--font-pirata-one);
+.font-spectral {
+  font-family: var(--font-spectral-sc);
 }
 
 .font-montserrat {
@@ -25,7 +25,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-pirata-one);
+  font-family: var(--font-spectral-sc);
 }
 
 p, span, a, li, button, input, textarea {

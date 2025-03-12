@@ -22,14 +22,14 @@ export default function ModelInvesment() {
         },
         {
             id: "restaurante",
-            title: "Restaurante Mar Mediterráneo",
+            title: "Restaurante Bar Mediterráneo",
             description: "Gastronomía exclusiva en un ambiente pirata con vistas privilegiadas y experiencias culinarias únicas.",
             icon: <Utensils className="w-10 h-10 text-[#bd8d4c]" />,
             imagePath: "/images/renders/gastrobar.jpg",
         },
         {
             id: "eventos",
-            title: "Centro de Eventos",
+            title: "Tarima de Eventos",
             description: "Espacios versátiles para celebraciones, reuniones corporativas y eventos especiales con temática pirata.",
             icon: <Map className="w-10 h-10 text-[#bd8d4c]" />,
             imagePath: "/images/renders/eventos.jpg",

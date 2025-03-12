@@ -48,7 +48,7 @@ export default function Ubication() {
             }}
           >
             <motion.p variants={fadeIn} className="text-[#5A3921] mb-6 font-serif text-lg">
-              A más de 2 km al borde de la imponente &ldquo;Represa Darío Echandía&rdquo;, su 
+              Más de 2 km al borde de la imponente &ldquo;Represa Darío Echandía&rdquo;, su 
               clima excepcional lo hace irresistible. Proyecto de alto potencial de 
               valorización en una zona urbanística con paisajes emblemáticos.
             </motion.p>

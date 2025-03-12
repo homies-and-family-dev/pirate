@@ -23,12 +23,12 @@ export default function Home() {
       <SeparatorTop />
       <Areas />
       <SeparatorCoffe />
-      <Engagement />
-      <Separator />
       <Amenities />
       <SeparatorTop />
       <Financement />
       <SeparatorCoffe />
+      <Engagement />
+      <Separator />
       <Alliances />
       <SeparatorCoffe />
       <Contact />

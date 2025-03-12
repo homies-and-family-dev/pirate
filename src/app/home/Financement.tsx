@@ -71,7 +71,7 @@ export default function Financement() {
                     <div className="inline-block relative">
                         <Coins className="text-[#bd8d4c] absolute -left-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                         <h2 className="text-4xl md:text-5xl font-pirate text-[#8B4513] relative z-10 inline-block">
-                            Financiamiento
+                            Paquetes de Inversión
                         </h2>
                         <Coins className="text-[#bd8d4c] absolute -right-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                     </div>
@@ -166,9 +166,9 @@ export default function Financement() {
                             <Percent className="w-8 h-8 text-[#bd8d4c]" />
                         </div>
                         <div>
-                            <h3 className="text-2xl font-pirate text-[#8B4513] mb-2">Recibe un 10% de descuento</h3>
+                            <h3 className="text-2xl font-pirate text-[#8B4513] mb-2">Recibe un <span className="font-bold">10%</span> de descuento</h3>
                             <p className="text-[#5A3921] font-serif">
-                                Aprovecha esta oportunidad única pagando de contado y obtén un 10% de descuento en cualquiera de nuestros paquetes de inversión.
+                                Aprovecha esta oportunidad única pagando de contado y obtén un <span className="font-bold">10%</span> de descuento en cualquiera de nuestros paquetes de inversión.
                             </p>
                         </div>
                     </div>

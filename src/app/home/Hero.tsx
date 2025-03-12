@@ -56,7 +56,7 @@ export default function Hero() {
             className="relative mb-8"
           >
             <h1 className="text-5xl md:text-8xl font-medium uppercase text-white tracking-wide leading-none mb-2">
-              Pirate Paradise
+              Invierte en tu futuro
             </h1>
           </motion.div>
         </div>
@@ -69,7 +69,7 @@ export default function Hero() {
           className="max-w-2xl mx-auto mb-4"
         >
           <p className="text-white text-lg md:text-xl font-serif leading-relaxed">
-          Descubre la ruta para encontrar la ubicación el tesoro, con una de las mejores inversiones y valorizaciones del pais.
+          Descubre la ruta para encontrar la ubicación del tesoro, con una de las mejores inversiones y valorizaciones del pais.
           </p>
         </motion.div>
         <Link href="/#contacto" className="inline-block bg-[#bd8d4c] border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#f2e0c8] px-6 py-2 text-lg font-medium rounded-full">Quiero Invertir</Link>
