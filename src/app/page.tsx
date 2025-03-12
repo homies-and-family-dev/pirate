@@ -11,21 +11,19 @@ import Areas from "./home/Areas";
 import Contact from "./home/Contact";
 import Engagement from "./home/Engagement";
 import SeparatorCoffe from "@/components/ui/SeparatorCoffe";
+import Invest from "./home/Invest";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <SeparatorTop />
       <Ubication />
-      <Separator />
       <ModelInvesment />
-      <SeparatorTop />
-      <Areas />
-      <SeparatorCoffe />
-      <Amenities />
+      <Invest />
       <SeparatorTop />
       <Financement />
+      <Amenities />
+      <Areas />
       <SeparatorCoffe />
       <Engagement />
       <Separator />

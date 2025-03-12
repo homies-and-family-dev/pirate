@@ -1,7 +1,9 @@
 "use client";
 
+import SeparatorTop from "@/components/ui/SeparatorTop";
 import { motion } from "framer-motion";
 import { MapPin, Sun, Waves, Building, Mountain, Anchor, Compass } from "lucide-react";
+import Image from "next/image";
 
 export default function Ubication() {
   const fadeIn = {
@@ -10,6 +12,8 @@ export default function Ubication() {
   };
   
   return (
+    <>
+    <SeparatorTop />
     <section id="ubicacion" className="py-20 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
       {/* Elementos decorativos de fondo */}
       <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
@@ -34,7 +38,7 @@ export default function Ubication() {
           <div className="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-[#bd8d4c] to-transparent mt-4"></div>
         </motion.div>
         
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-12 items-center px-4 md:px-10 lg:px-20">
           {/* Columna izquierda */}
           <motion.div 
             className="w-full md:w-1/2"
@@ -48,8 +52,7 @@ export default function Ubication() {
             }}
           >
             <motion.p variants={fadeIn} className="text-[#5A3921] mb-6 font-serif text-lg">
-              Más de 2 km al borde de la imponente &ldquo;Represa Darío Echandía&rdquo;, su 
-              clima excepcional lo hace irresistible. Proyecto de alto potencial de 
+              Clima excepcional lo hace irresistible. Proyecto de alto potencial de 
               valorización en una zona urbanística con paisajes emblemáticos.
             </motion.p>
             
@@ -154,19 +157,22 @@ export default function Ubication() {
                   </div>
                 </div>
               </div>
-              
-              {/* Adornos decorativos */}
-              <img 
-                src="/images/compass-rose.png" 
-                alt="Rosa de los vientos" 
-                className="absolute -bottom-10 -right-10 w-28 h-28 opacity-20"
-              />
-              
+              {/* Barco decorativo */}
+              <div className="absolute -bottom-6 -right-6 w-16 h-16 opacity-30 transform -rotate-12">
+                <Image
+                  src="/images/barco.png"
+                  alt="Barco pirata"
+                  fill
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
               {/* Barco decorativo */}
               <div className="absolute -bottom-6 -left-6 w-16 h-16 opacity-30 transform -rotate-12">
-                <img 
+                <Image
                   src="/images/barco.png" 
-                  alt="Barco pirata" 
+                  alt="Barco pirata"
+                  fill
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -175,6 +181,7 @@ export default function Ubication() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

@@ -32,4 +32,9 @@ p, span, a, li, button, input, textarea {
   font-family: var(--font-montserrat);
 }
 
+/* Gradiente radial para fondos estilizados */
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, #111111 0%, #080808 40%, #000000 100%);
+}
+
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Gift, Coins, Award, Compass, Anchor, Ship, Utensils, Waves } from "lucide-react";
+import { Users, Gift, Coins, Award, Anchor, Ship, Utensils, Waves } from "lucide-react";
 import Link from "next/link";
 
 export default function Engagement() {
@@ -13,27 +13,21 @@ export default function Engagement() {
     const referralBenefits = [
         {
             icon: <Coins className="w-10 h-10 text-[#bd8d4c]" />,
-            title: "Comisión por Hospedaje",
-            description: "Recibe un 5% de comisión por cada referido que reserve una estancia en nuestras cabañas.",
-            highlight: "5%"
+            title: "Descuento por Hospedaje",
+            description: "Recibe un 25% de descuento en temporada alta y un 40% en temporada baja como accionista.",
+            highlight: "25% y 40%"
         },
         {
             icon: <Utensils className="w-10 h-10 text-[#bd8d4c]" />,
             title: "Descuentos en Restaurante",
-            description: "Disfruta de un 15% de descuento en nuestro restaurante temático para ti y tus acompañantes.",
-            highlight: "15%"
+            description: "Disfruta de un 25% de descuento en nuestro restaurante temático.",
+            highlight: "25%"
         },
         {
             icon: <Waves className="w-10 h-10 text-[#bd8d4c]" />,
             title: "Club Náutico",
-            description: "Obtén un 20% de descuento en todas las actividades acuáticas y alquiler de equipos.",
-            highlight: "20%"
-        },
-        {
-            icon: <Compass className="w-10 h-10 text-[#bd8d4c]" />,
-            title: "Tours y Excursiones",
-            description: "Accede a un 10% de descuento en tours guiados y excursiones temáticas.",
-            highlight: "10%"
+            description: "Obtén un 50% de descuento motor y un 70% no motor en las actividades acuáticas.",
+            highlight: "50% y 70%"
         }
     ];
 
@@ -63,7 +57,7 @@ export default function Engagement() {
                     <div className="inline-block relative">
                         <Users className="text-[#bd8d4c] absolute -left-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                         <h2 className="text-4xl md:text-5xl font-pirate text-[#8B4513] relative z-10 inline-block">
-                            Programa de Referidos
+                            Beneficios exclusivos
                         </h2>
                         <Gift className="text-[#bd8d4c] absolute -right-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                     </div>

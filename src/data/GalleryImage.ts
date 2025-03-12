@@ -28,7 +28,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: "img6",
-        title: "Zona de Eventos",
+        title: "Tarima de Eventos",
         imagePath: "/images/renders/eventos.jpg"
     }
 ];

@@ -128,17 +128,7 @@ export default function Header() {
               `}
             >
               <div className="flex flex-col items-center justify-center h-full w-full">
-                {/* Título del menú móvil */}
-                <div className="py-4 border-b border-[#bd8d4c]/30 bg-black flex items-center justify-center relative">
-                  <Image 
-                    src="/images/logo.png" 
-                    alt="Pirate Paradise Logo" 
-                    width={48} 
-                    height={48}
-                    className="mr-3"
-                  />
-                  <h2 className="text-xl font-spectral text-[#bd8d4c]">NAVEGACIÓN</h2>
-                </div>
+              
                 <ul className="flex flex-col items-center gap-8 text-[#f2e0c8] uppercase text-xl font-medium">
                   {navLinks.map((link, index) => (
                     <li key={index} className="w-full text-center">

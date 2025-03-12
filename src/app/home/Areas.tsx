@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Home, Droplets, Bed, Bath, Map } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SeparatorTop from "@/components/ui/SeparatorTop";
 
 export default function Areas() {
     const fadeIn = {
@@ -48,6 +49,8 @@ export default function Areas() {
     ];
 
     return (
+        <>
+        <SeparatorTop />
         <section id="modelos" className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
             {/* Elementos decorativos de fondo */}
             <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
@@ -173,5 +176,6 @@ export default function Areas() {
                 </motion.div>
             </div>
         </section>
+        </>
     );
 }

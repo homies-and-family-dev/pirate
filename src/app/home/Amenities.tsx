@@ -6,6 +6,7 @@ import { X, Anchor, Compass, Maximize } from "lucide-react";
 import { GalleryImage } from "@/types/GalleryTypes";
 import { galleryImages } from "@/data/GalleryImage";
 import Image from "next/image";
+import Separator from "@/components/ui/Separator";
 
 // Tipos para los componentes
 type ImageModalProps = {
@@ -184,6 +185,8 @@ export default function Amenities() {
     };
 
     return (
+        <>
+        <Separator />
         <section id="galeria" className="py-12 md:py-20 overflow-hidden bg-[#0c0c0c] relative">
             {/* Elementos decorativos de fondo - solo visibles en desktop */}
             <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none hidden md:block">
@@ -220,5 +223,6 @@ export default function Amenities() {
                 />
             </div>
         </section>
+        </>
     );
 }

@@ -54,7 +54,7 @@ export default function Financement() {
     ];
 
     return (
-        <section id="financiamiento" className="py-20 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
+        <section id="paquetes" className="py-20 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
             {/* Elementos decorativos de fondo */}
             <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
             <div className="absolute bottom-0 left-0 w-full h-12 z-10 opacity-30"></div>
@@ -70,19 +70,19 @@ export default function Financement() {
                 >
                     <div className="inline-block relative">
                         <Coins className="text-[#bd8d4c] absolute -left-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
-                        <h2 className="text-4xl md:text-5xl font-pirate text-[#8B4513] relative z-10 inline-block">
+                        <h2 className="text-4xl md:text-5xl font-spectral text-[#8B4513] relative z-10 inline-block">
                             Paquetes de Inversión
                         </h2>
                         <Coins className="text-[#bd8d4c] absolute -right-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                     </div>
                     <div className="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-[#bd8d4c] to-transparent mt-4"></div>
-                    <p className="text-[#5A3921] mt-4 max-w-2xl mx-auto font-serif">
+                    <p className="text-[#5A3921] mt-4 max-w-2xl mx-auto">
                         Invierte en Pirate Paradise con nuestros planes de financiamiento flexibles y adaptados a tus necesidades.
                     </p>
                 </motion.div>
                 
                 {/* Tarjetas de opciones de financiamiento */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {financingOptions.map((option, index) => (
                         <motion.div
                             key={index}
@@ -91,9 +91,9 @@ export default function Financement() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             variants={fadeIn}
-                            className={`relative rounded-lg overflow-hidden shadow-lg ${
+                            className={`relative rounded-lg overflow-hidden shadow-lg h-full ${
                                 option.recommended 
-                                    ? "bg-[#f9f4e8] border-2 border-[#bd8d4c] transform scale-105 z-10" 
+                                    ? "bg-[#f9f4e8] border-2 border-[#bd8d4c] md:transform md:scale-105 md:z-10" 
                                     : "bg-[#f5ecd9] border border-[#bd8d4c]/30"
                             }`}
                         >
@@ -103,18 +103,18 @@ export default function Financement() {
                                 </div>
                             )}
                             
-                            <div className="p-6">
+                            <div className="p-5 md:p-6 flex flex-col h-full">
                                 <div className="flex items-center mb-4">
                                     <div className="w-12 h-12 bg-[#f9f4e8] rounded-full flex items-center justify-center mr-4 border border-[#bd8d4c]/30">
                                         {option.icon}
                                     </div>
-                                    <h3 className="text-2xl font-pirate text-[#8B4513]">{option.title}</h3>
+                                    <h3 className="text-xl md:text-2xl font-spectral text-[#8B4513]">{option.title}</h3>
                                 </div>
                                 
                                 <div className="mb-6">
                                     <div className="flex items-baseline">
                                         <span className="text-[#bd8d4c] text-lg">$</span>
-                                        <span className="text-3xl font-bold text-[#8B4513]">{option.pricePerAction}</span>
+                                        <span className="text-2xl md:text-3xl font-bold text-[#8B4513]">{option.pricePerAction}</span>
                                         <span className="text-[#5A3921] ml-1">COP</span>
                                     </div>
                                     <p className="text-sm text-[#5A3921]">cada acción</p>
@@ -122,14 +122,14 @@ export default function Financement() {
                                     <div className="mt-4 pt-4 border-t border-[#bd8d4c]/20">
                                         <div className="flex items-baseline">
                                             <span className="text-[#bd8d4c] text-lg">$</span>
-                                            <span className="text-2xl font-bold text-[#8B4513]">{option.totalValue}</span>
+                                            <span className="text-xl md:text-2xl font-bold text-[#8B4513]">{option.totalValue}</span>
                                             <span className="text-[#5A3921] ml-1">COP</span>
                                         </div>
                                         <p className="text-sm text-[#5A3921]">Valor Total</p>
                                     </div>
                                 </div>
                                 
-                                <ul className="space-y-2 mb-6">
+                                <ul className="space-y-2 mb-6 flex-grow">
                                     {option.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start">
                                             <CheckCircle className="w-5 h-5 text-[#bd8d4c] mr-2 flex-shrink-0 mt-0.5" />
@@ -140,7 +140,7 @@ export default function Financement() {
                                 
                                 <Link 
                                     href="/#contacto" 
-                                    className={`block text-center py-3 px-4 rounded-full transition-colors duration-300 ${
+                                    className={`block text-center py-2 md:py-3 px-4 rounded-full transition-colors duration-300 mt-auto ${
                                         option.recommended 
                                             ? "bg-[#bd8d4c] text-white hover:bg-[#a67a3e]" 
                                             : "bg-transparent border-2 border-[#bd8d4c] text-[#8B4513] hover:bg-[#bd8d4c] hover:text-white"
@@ -159,15 +159,15 @@ export default function Financement() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.5 }}
-                    className="bg-[#8B4513]/10 rounded-lg p-6 border-l-4 border-[#bd8d4c] max-w-3xl mx-auto"
+                    className="bg-[#8B4513]/10 rounded-lg p-5 md:p-6 border-l-4 border-[#bd8d4c] max-w-3xl mx-auto"
                 >
-                    <div className="flex items-center">
-                        <div className="w-16 h-16 bg-[#bd8d4c]/20 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                    <div className="flex flex-col md:flex-row items-center">
+                        <div className="w-16 h-16 bg-[#bd8d4c]/20 rounded-full flex items-center justify-center mb-4 md:mb-0 md:mr-6 flex-shrink-0">
                             <Percent className="w-8 h-8 text-[#bd8d4c]" />
                         </div>
-                        <div>
-                            <h3 className="text-2xl font-pirate text-[#8B4513] mb-2">Recibe un <span className="font-bold">10%</span> de descuento</h3>
-                            <p className="text-[#5A3921] font-serif">
+                        <div className="text-center md:text-left">
+                            <h3 className="text-xl md:text-2xl font-spectral text-[#8B4513] mb-2">Recibe un <span className="font-bold">10%</span> de descuento</h3>
+                            <p className="text-[#5A3921]">
                                 Aprovecha esta oportunidad única pagando de contado y obtén un <span className="font-bold">10%</span> de descuento en cualquiera de nuestros paquetes de inversión.
                             </p>
                         </div>
@@ -184,7 +184,7 @@ export default function Financement() {
                 >
                     <Link 
                         href="/#contacto" 
-                        className="inline-flex items-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#8B4513] hover:text-[#f5ecd9] px-8 py-3 text-lg font-medium rounded-full transition-colors duration-300"
+                        className="inline-flex items-center bg-transparent border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-[#8B4513] hover:text-[#f5ecd9] px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium rounded-full transition-colors duration-300"
                     >
                         <CreditCard className="w-5 h-5 mr-2" />
                         Consultar Opciones de Financiamiento
