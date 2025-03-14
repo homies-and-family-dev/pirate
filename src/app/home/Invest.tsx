@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CoinsIcon, Anchor, Clock, TrendingUp, Calendar, BarChart3, Percent } from "lucide-react";
+import { CoinsIcon, Anchor, Clock, TrendingUp, BarChart3, Percent, Users, MapPin, Tag, Ticket } from "lucide-react";
 
 // Componente para los separadores decorativos
 const PirateDivider = () => (
@@ -59,6 +60,17 @@ const InvestmentOption = ({ title, price, period, description, isHighlighted = f
 export default function Invest() {
   return (
     <section id="financiamiento" className="py-20 md:py-28 bg-black relative overflow-hidden">
+      {/* Fondo decorativo */}
+      <div className="absolute inset-0 opacity-10 z-0">
+        <Image 
+          src="/images/map-bg.jpg" 
+          alt="Mapa del tesoro" 
+          fill 
+          className="object-cover"
+          priority
+        />
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-spectral text-[#f2e0c8] mb-4">Invierte en el Tesoro Pirata</h2>
@@ -81,7 +93,7 @@ export default function Invest() {
             title="Financiado 6 Meses" 
             price="$14.900.000" 
             period="COP"
-            description="Divide tu inversión en 6 cuotas mensuales para facilitar tu entrada a esta aventura pirata."
+            description="Divide tu inversión en 6 cuotas mensuales 100% sin intereses para facilitar tu entrada a esta aventura pirata."
             isHighlighted={true}
           />
           
@@ -89,7 +101,7 @@ export default function Invest() {
             title="Financiado 12 Meses" 
             price="$15.900.000" 
             period="COP"
-            description="La opción más flexible con 12 cuotas mensuales para que puedas unirte sin preocupaciones a nuestro tesoro."
+            description="La opción más flexible con 12 cuotas mensuales 100% sin intereses para que puedas unirte sin preocupaciones a nuestro tesoro."
           />
         </div>
         
@@ -97,19 +109,9 @@ export default function Invest() {
         
         {/* Proyección de retorno de inversión */}
         <div id="rentabilidad" className="bg-[#0d0d0d] border-2 border-[#bd8d4c]/30 rounded-xl p-6 md:p-8 max-w-5xl mx-auto mb-12">
-          <h3 className="text-2xl font-spectral text-[#bd8d4c] mb-6 text-center">Proyección de Retorno de Inversión</h3>
+          <h3 className="text-2xl font-spectral text-[#bd8d4c] mb-6 text-center">Proyección del Proyecto</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-black/50 rounded-lg p-5 border border-[#bd8d4c]/20">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-3">
-                  <Calendar className="w-6 h-6 text-[#bd8d4c]" />
-                </div>
-                <h4 className="text-lg font-spectral text-[#f2e0c8]">Tiempo de Apertura</h4>
-              </div>
-              <p className="text-[#f2e0c8]/70">Proyecto operativo y abierto al público entre <span className="text-[#bd8d4c] font-bold">3-4 años</span> después de la inversión inicial.</p>
-            </div>
-            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-black/50 rounded-lg p-5 border border-[#bd8d4c]/20">
               <div className="flex items-center mb-4">
                 <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-3">
@@ -117,7 +119,7 @@ export default function Invest() {
                 </div>
                 <h4 className="text-lg font-spectral text-[#f2e0c8]">Ocupación Proyectada</h4>
               </div>
-              <p className="text-[#f2e0c8]/70">Escenario conservador con <span className="text-[#bd8d4c] font-bold">40% de ocupación</span> para el cálculo de rentabilidad.</p>
+              <p className="text-[#f2e0c8]/70">Escenario conservador con <span className="text-[#bd8d4c] font-bold">ocupación moderada</span> para el cálculo de rentabilidad, con potencial de crecimiento según la temporada.</p>
             </div>
             
             <div className="bg-black/50 rounded-lg p-5 border border-[#bd8d4c]/20">
@@ -125,14 +127,15 @@ export default function Invest() {
                 <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-3">
                   <Percent className="w-6 h-6 text-[#bd8d4c]" />
                 </div>
-                <h4 className="text-lg font-spectral text-[#f2e0c8]">Rentabilidad Anual</h4>
+                <h4 className="text-lg font-spectral text-[#f2e0c8]">Retorno de Inversión</h4>
               </div>
-              <p className="text-[#f2e0c8]/70">Recibe <span className="text-[#bd8d4c] font-bold">20% efectivo anual</span> a partir del primer año de operación.</p>
+              <p className="text-[#f2e0c8]/70">Disfruta de un <span className="text-[#bd8d4c] font-bold">atractivo retorno</span> sobre tu inversión a partir del inicio de operaciones, con proyecciones favorables a largo plazo.</p>
             </div>
           </div>
           
           <div className="mt-8 p-5 bg-[#bd8d4c]/10 rounded-lg border border-[#bd8d4c]/30">
-            <h4 className="text-lg font-spectral text-[#bd8d4c] mb-3 text-center">Línea de Tiempo de la Inversión</h4>
+            <h4 className="text-lg font-spectral text-[#bd8d4c] mb-3 text-center">Línea de Tiempo Estimada del Proyecto</h4>
+            <p className="text-center text-[#f2e0c8]/70 text-sm mb-4 italic">Los tiempos pueden variar según factores externos y condiciones del mercado</p>
             
             {/* Línea de tiempo para escritorio */}
             <div className="relative hidden md:block">
@@ -142,25 +145,25 @@ export default function Invest() {
                 <div className="flex flex-col items-center">
                   <div className="w-6 h-6 rounded-full bg-[#bd8d4c] mb-2"></div>
                   <p className="text-[#f2e0c8] text-sm font-bold">Inversión</p>
-                  <p className="text-[#f2e0c8]/70 text-xs">Hoy</p>
+                  <p className="text-[#f2e0c8]/70 text-xs">Inicio</p>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-6 h-6 rounded-full bg-[#bd8d4c]/70 mb-2"></div>
                   <p className="text-[#f2e0c8] text-sm font-bold">Construcción</p>
-                  <p className="text-[#f2e0c8]/70 text-xs">1-3 años</p>
+                  <p className="text-[#f2e0c8]/70 text-xs">Año 1</p>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-6 h-6 rounded-full bg-[#bd8d4c]/70 mb-2"></div>
                   <p className="text-[#f2e0c8] text-sm font-bold">Apertura</p>
-                  <p className="text-[#f2e0c8]/70 text-xs">3-4 años</p>
+                  <p className="text-[#f2e0c8]/70 text-xs">Año 2</p>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-6 h-6 rounded-full bg-[#ffd700] mb-2"></div>
                   <p className="text-[#f2e0c8] text-sm font-bold">Rentabilidad</p>
-                  <p className="text-[#f2e0c8]/70 text-xs">20% anual</p>
+                  <p className="text-[#f2e0c8]/70 text-xs">Vitalicia</p>
                 </div>
               </div>
             </div>
@@ -175,7 +178,7 @@ export default function Invest() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#bd8d4c] mr-4 relative z-10"></div>
                     <div>
                       <p className="text-[#f2e0c8] font-bold">Inversión</p>
-                      <p className="text-[#f2e0c8]/70 text-sm">Hoy</p>
+                      <p className="text-[#f2e0c8]/70 text-sm">Inicio</p>
                     </div>
                   </div>
                   
@@ -183,7 +186,7 @@ export default function Invest() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#bd8d4c]/70 mr-4 relative z-10"></div>
                     <div>
                       <p className="text-[#f2e0c8] font-bold">Construcción</p>
-                      <p className="text-[#f2e0c8]/70 text-sm">1-3 años</p>
+                      <p className="text-[#f2e0c8]/70 text-sm">Año 1</p>
                     </div>
                   </div>
                   
@@ -191,7 +194,7 @@ export default function Invest() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#bd8d4c]/70 mr-4 relative z-10"></div>
                     <div>
                       <p className="text-[#f2e0c8] font-bold">Apertura</p>
-                      <p className="text-[#f2e0c8]/70 text-sm">3-4 años</p>
+                      <p className="text-[#f2e0c8]/70 text-sm">Año 2</p>
                     </div>
                   </div>
                   
@@ -199,7 +202,7 @@ export default function Invest() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#ffd700] mr-4 relative z-10"></div>
                     <div>
                       <p className="text-[#f2e0c8] font-bold">Rentabilidad</p>
-                      <p className="text-[#f2e0c8]/70 text-sm">20% anual</p>
+                      <p className="text-[#f2e0c8]/70 text-sm">Vitalicia</p>
                     </div>
                   </div>
                 </div>
@@ -217,8 +220,48 @@ export default function Invest() {
                 <TrendingUp className="w-6 h-6 text-[#bd8d4c]" />
               </div>
               <div>
-                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Alta rentabilidad</h4>
-                <p className="text-[#f2e0c8]/70">Obtén un 20% efectivo anual sobre tu inversión a partir del primer año de operación.</p>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Rentabilidad Atractiva</h4>
+                <p className="text-[#f2e0c8]/70">Disfruta de un retorno favorable sobre tu inversión con proyecciones de crecimiento a largo plazo.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-4">
+                <Users className="w-6 h-6 text-[#bd8d4c]" />
+              </div>
+              <div>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Parte de la SAS</h4>
+                <p className="text-[#f2e0c8]/70">Conviértete en accionista de la Sociedad por Acciones Simplificada, con todos los beneficios legales que esto conlleva.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-4">
+                <MapPin className="w-6 h-6 text-[#bd8d4c]" />
+              </div>
+              <div>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Propiedad del Terreno</h4>
+                <p className="text-[#f2e0c8]/70">Sé propietario de una parte del terreno, con potencial de valorización en esta zona turística en desarrollo.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-4">
+                <Tag className="w-6 h-6 text-[#bd8d4c]" />
+              </div>
+              <div>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Descuentos Exclusivos</h4>
+                <p className="text-[#f2e0c8]/70">Accede a descuentos especiales en todos los servicios y atracciones del complejo como accionista.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-[#bd8d4c]/20 p-3 rounded-full mr-4">
+                <Ticket className="w-6 h-6 text-[#bd8d4c]" />
+              </div>
+              <div>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Reservas Prioritarias</h4>
+                <p className="text-[#f2e0c8]/70">Disfruta de disponibilidad preferencial para reservar atracciones, eventos y alojamiento en temporadas altas.</p>
               </div>
             </div>
             
@@ -228,7 +271,7 @@ export default function Invest() {
               </div>
               <div>
                 <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Valorización Constante</h4>
-                <p className="text-[#f2e0c8]/70">El valor de tu acción aumentará con el tiempo y el desarrollo del proyecto.</p>
+                <p className="text-[#f2e0c8]/70">El valor de tu acción aumentará con el tiempo y el desarrollo del proyecto en esta zona de alto potencial.</p>
               </div>
             </div>
           </div>

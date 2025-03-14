@@ -1,17 +1,15 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { Shield, Building } from "lucide-react";
+import { Anchor } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import SeparatorTop from "@/components/ui/SeparatorTop";
+import Separator from "@/components/ui/Separator";
+
 // Tipo para las empresas aliadas
 type AlliancePartner = {
     id: string;
     name: string;
     logo: string;
-    role: string;
-    description: string;
 };
 
 export default function Alliance() {
@@ -20,65 +18,58 @@ export default function Alliance() {
         {
             id: "pomar",
             name: "Constructora EL POMAR",
-            logo: "/images/logos/logopomar.webp",
-            role: "Desarrollo y Construcción",
-            description: "27 años de experiencia en construcción en Tolima."
+            logo: "/images/logos/logopomar.webp"
         },
         {
             id: "monteazul",
             name: "MonteAzul Group",
-            logo: "/images/logos/logomonteazul.png",
-            role: "Respaldo Financiero",
-            description: "Solidez económica para proyectos inmobiliarios."
+            logo: "/images/logos/logomonteazul.png"
         },
         {
             id: "homies",
-            name: "Homies and family",
-            logo: "/images/logos/homies.webp",
-            role: "Diseño Arquitectónico",
-            description: "Especialistas en espacios náuticos y residenciales."
+            name: "Homies and Family",
+            logo: "/images/logos/homies.webp"
         },
         {
             id: "familygrill",
             name: "Family Grill",
-            logo: "/images/logos/logofamilygrill.png",
-            role: "Gestión Ambiental",
-            description: "Sostenibilidad para proyectos turísticos."
+            logo: "/images/logos/logofamilygrill.png"
         }
     ];
 
     return (
         <>
-        <SeparatorTop />
-        <section id="alliance" className="py-12 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
-            {/* Elementos decorativos de fondo */}
-            <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
-            <div className="absolute bottom-0 left-0 w-full h-12 z-10 opacity-30"></div>
+        <Separator />
+        <section id="alliance" className="py-16 overflow-hidden bg-black relative">
             
-            <div className="container mx-auto px-4 relative z-20">
+            {/* Elementos decorativos temáticos */}
+            <div className="absolute top-1/4 right-8 opacity-10 hidden lg:block">
+                <Anchor className="w-40 h-40 text-[#bd8d4c]" />
+            </div>
+            <div className="absolute bottom-1/4 left-8 opacity-10 hidden lg:block">
+                <Anchor className="w-40 h-40 text-[#bd8d4c] rotate-12" />
+            </div>
+            
+            <div className="container mx-auto px-4 relative z-20 pt-8">
                 {/* Título principal con decoración */}
                 <motion.div 
-                    className="text-center mb-8"
+                    className="text-center mb-16"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
                 >
                     <div className="inline-block relative">
-                        <Shield className="text-[#bd8d4c] absolute -left-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
-                        <h2 className="text-4xl md:text-5xl font-pirate text-[#8B4513] relative z-10 inline-block">
+                        
+                        <h2 className="text-4xl md:text-5xl font-spectral text-[#bd8d4c] relative z-10 inline-block tracking-wider">
                             Nuestros Aliados
                         </h2>
-                        <Shield className="text-[#bd8d4c] absolute -right-10 top-1/2 transform -translate-y-1/2 opacity-70" size={24} />
                     </div>
-                    <div className="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-[#bd8d4c] to-transparent mt-4"></div>
-                    <p className="text-[#5A3921] mt-4 max-w-2xl mx-auto font-serif">
-                        Respaldo de aliados estratégicos con experiencia en diversos sectores.
-                    </p>
+                    <div className="h-1 w-64 mx-auto bg-gradient-to-r from-transparent via-[#bd8d4c] to-transparent mt-4"></div>
                 </motion.div>
                 
-                {/* Grid de aliados */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {/* Grid de aliados - Solo logos */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
                     {partners.map((partner, index) => (
                         <motion.div 
                             key={partner.id}
@@ -86,44 +77,42 @@ export default function Alliance() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white rounded-lg shadow-md overflow-hidden border border-[#bd8d4c]/20 hover:shadow-lg transition-all duration-300 hover:border-[#bd8d4c]/50 group"
+                            className="relative group"
                         >
-                            <div className="relative h-48 w-full bg-[#f9f4e8] border-b border-[#bd8d4c]/20">
-                                <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#bd8d4c] rounded-tl-lg z-10"></div>
-                                <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#bd8d4c] rounded-tr-lg z-10"></div>
-                                <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#bd8d4c] rounded-bl-lg z-10"></div>
-                                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#bd8d4c] rounded-br-lg z-10"></div>
-                                <Image 
-                                    src={partner.logo} 
-                                    alt={partner.name}
-                                    fill
-                                    className="object-contain p-4"
-                                />
+                            {/* Marco decorativo */}
+                            <div className="absolute inset-0 border border-[#bd8d4c]/60 rounded-lg"></div>
+                            <div className="absolute top-0 left-0 w-8 h-8">
+                                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#bd8d4c]"></div>
+                                <div className="absolute top-0 left-0 h-full w-[2px] bg-[#bd8d4c]"></div>
                             </div>
-                            <div className="p-4">
-                                <div className="flex items-center mb-2">
-                                    <Building className="w-4 h-4 text-[#bd8d4c] mr-2 flex-shrink-0" />
-                                    <h3 className="text-lg font-bold text-[#8B4513] truncate">{partner.name}</h3>
+                            <div className="absolute top-0 right-0 w-8 h-8">
+                                <div className="absolute top-0 right-0 w-full h-[2px] bg-[#bd8d4c]"></div>
+                                <div className="absolute top-0 right-0 h-full w-[2px] bg-[#bd8d4c]"></div>
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-8 h-8">
+                                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#bd8d4c]"></div>
+                                <div className="absolute bottom-0 left-0 h-full w-[2px] bg-[#bd8d4c]"></div>
+                            </div>
+                            <div className="absolute bottom-0 right-0 w-8 h-8">
+                                <div className="absolute bottom-0 right-0 w-full h-[2px] bg-[#bd8d4c]"></div>
+                                <div className="absolute bottom-0 right-0 h-full w-[2px] bg-[#bd8d4c]"></div>
+                            </div>
+                            
+                            {/* Contenido */}
+                            <div className="bg-[#f9f4e8] rounded-lg overflow-hidden h-40 sm:h-48 flex items-center justify-center p-6 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(189,141,76,0.3)]">
+                                <div className="relative w-full h-full flex items-center justify-center">
+                                    <Image 
+                                        src={partner.logo} 
+                                        alt={partner.name}
+                                        fill
+                                        sizes="(max-width: 768px) 40vw, 20vw"
+                                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-110"
+                                    />
                                 </div>
-                                <p className="text-[#bd8d4c] text-sm font-medium mb-2">{partner.role}</p>
-                                <p className="text-[#5A3921] text-sm">{partner.description}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-                
-                {/* Nota de cierre */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.3 }}
-                    className="text-center mt-8 max-w-2xl mx-auto"
-                >
-                    <p className="text-[#5A3921] text-sm italic">
-                        Aliados estratégicos que garantizan la excelencia en cada aspecto de Pirate Paradise.
-                    </p>
-                </motion.div>
             </div>
         </section>
         </>

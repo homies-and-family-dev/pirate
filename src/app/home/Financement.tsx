@@ -20,7 +20,7 @@ export default function Financement() {
                 "Financiado a 12 meses",
                 "Retorno de inversión estimado",
                 "Documentación legal incluida",
-                "Asesoría personalizada"
+                "Acceso a eventos exclusivos"
             ]
         },
         {
@@ -32,7 +32,7 @@ export default function Financement() {
                 "Financiado a 12 meses",
                 "Retorno de inversión estimado",
                 "Documentación legal incluida",
-                "Asesoría personalizada",
+                "Acceso a eventos exclusivos",
                 "Beneficios exclusivos"
             ],
             recommended: true
@@ -46,9 +46,9 @@ export default function Financement() {
                 "Financiado a 12 meses",
                 "Retorno de inversión estimado",
                 "Documentación legal incluida",
-                "Asesoría personalizada",
+                "Acceso a eventos exclusivos",
                 "Beneficios exclusivos",
-                "Prioridad en selección de ubicación"
+                "Descuentos en servicios adicionales"
             ]
         }
     ];

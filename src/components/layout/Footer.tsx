@@ -27,15 +27,15 @@ export default function Footer() {
               Mantente al día con nuestras novedades y avances del proyecto
             </p>
             <div className="flex justify-center md:justify-start space-x-6 mt-4">
-              <a href="https://www.facebook.com/MonteazulGroup/" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
+              <Link href="https://www.facebook.com/MonteazulGroup/" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
                 <Facebook size={20} className="text-[#bd8d4c] group-hover:text-[#ffd700]" />
-              </a>
-              <a href="https://www.instagram.com/monteazulgroup/" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
+              </Link>
+              <Link href="https://www.instagram.com/pirateparadise.prado/" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
                 <Instagram size={20} className="text-[#bd8d4c] group-hover:text-[#ffd700]" />
-              </a>
-              <a href="https://www.youtube.com/@monteazulgroup" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
+              </Link>
+              <Link href="https://www.youtube.com/@monteazulgroup" className="bg-[#0c0c0c] p-2 rounded-full border border-[#bd8d4c]/30 hover:border-[#ffd700] transition-all duration-300 group">
                 <Youtube size={20} className="text-[#bd8d4c] group-hover:text-[#ffd700]" />
-              </a>
+              </Link>
             </div>
           </div>
           {/* Columna 2: Enlaces rápidos */}
@@ -82,7 +82,7 @@ export default function Footer() {
                 <div className="flex items-center mb-1 sm:mb-0">
                   <Mail size={16} className="text-[#bd8d4c] mr-2 flex-shrink-0" />
                 </div>
-                <span className="break-all">gerencia.comercial@monteazulgroup.com</span>
+                <span className="break-all">asesor6@monteazulgroup.com</span>
               </li>
               <li className="flex items-start space-x-3 text-gray-300">
                 <MapPin size={16} className="text-[#bd8d4c] mt-1 flex-shrink-0" />

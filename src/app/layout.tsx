@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/layout/header/Header";
 import "./globals.css";
 import { Montserrat, Spectral_SC } from "next/font/google";
 
@@ -21,6 +20,12 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   description: "Descubre oportunidades de inversión en cabañas, restaurantes y club náutico en la hermosa Represa del Río Prado, Tolima.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({
@@ -29,12 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${spectralSC.variable} antialiased`}
+        className={`${montserrat.variable} ${spectralSC.variable} antialiased overflow-x-hidden`}
       >
-          <Header />
-          <main>{children}</main>
+        <main className="flex flex-col min-h-screen">{children}</main>
       </body>
     </html>
   );

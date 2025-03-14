@@ -14,6 +14,11 @@
 html, body {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .font-spectral {
@@ -26,6 +31,8 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-spectral-sc);
+  word-break: break-word;
+  hyphens: auto;
 }
 
 p, span, a, li, button, input, textarea {
@@ -35,6 +42,36 @@ p, span, a, li, button, input, textarea {
 /* Gradiente radial para fondos estilizados */
 .bg-radial-gradient {
   background: radial-gradient(circle at center, #111111 0%, #080808 40%, #000000 100%);
+}
+
+/* Media queries para ajustes responsivos */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  }
+  
+  p, span, a, li, button, input, textarea {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Prevenir desbordamiento horizontal */
+.overflow-x-auto {
+  max-width: 100%;
+  scrollbar-width: thin;
 }
 
 

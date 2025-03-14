@@ -5,8 +5,12 @@ import { Phone, Mail, Clock, MapPin, Check, Calendar, Building, Anchor, Ship } f
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import SeparatorTop from "@/components/ui/SeparatorTop";
 
 export default function Contact() {
+    const router = useRouter();
+    
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -16,6 +20,8 @@ export default function Contact() {
     });
 
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target as HTMLInputElement;
@@ -26,23 +32,58 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí iría la lógica para enviar el formulario
-        console.log("Formulario enviado:", formData);
-        setFormSubmitted(true);
+        setIsSubmitting(true);
+        setError("");
         
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setFormSubmitted(false);
-            setFormData({
-                fullName: "",
-                email: "",
-                phone: "",
-                contactTime: "",
-                acceptTerms: false
+        try {
+            // Preparar los datos para la API
+            const apiData = {
+                name: formData.fullName,
+                email: formData.email,
+                phone_number: formData.phone.replace(/[^0-9]/g, ''), // Eliminar caracteres no numéricos
+                city: "", // No tenemos campo de ciudad en el formulario
+                comment: `Horario de contacto preferido: ${getContactTimeLabel(formData.contactTime)}`,
+                projectId: "NJfMd0HoLa9b6pATjB2n/EijbFRBqX/6QLPvzfnmIG-GREqhZMebO7abbCk6Kz5k", // ID de Pirate Paradise
+                origin: typeof window !== 'undefined' ? window.location.href : "pagina.web"
+            };
+            
+            // Enviar datos a la API
+            const response = await fetch("http://api.smart-home.com.co/api/LeadForm/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(apiData),
             });
-        }, 3000);
+            
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            
+            const result = await response.text();
+            console.log("Respuesta de la API:", result);
+            
+            // Mostrar mensaje de éxito brevemente antes de redireccionar
+            setFormSubmitted(true);
+            
+            // Redireccionar a la página de agradecimiento después de un breve retraso
+            setTimeout(() => {
+                router.push("/gracias");
+            }, 1000);
+            
+        } catch (err) {
+            console.error("Error al enviar el formulario:", err);
+            setError("Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.");
+            setIsSubmitting(false);
+        }
+    };
+    
+    // Función para obtener la etiqueta del horario de contacto
+    const getContactTimeLabel = (value: string): string => {
+        const option = contactTimeOptions.find(opt => opt.value === value);
+        return option ? option.label : "No especificado";
     };
 
     const fadeIn = {
@@ -85,6 +126,8 @@ export default function Contact() {
     ];
 
     return (
+        <>
+        <SeparatorTop />
         <section id="contacto" className="py-16 overflow-hidden bg-gradient-to-b from-[#e4d4b9] to-[#efe1cb] relative">
             {/* Elementos decorativos de fondo */}
             <div className="absolute top-0 left-0 w-full h-12 z-10 opacity-30"></div>
@@ -150,6 +193,12 @@ export default function Contact() {
                                     </div>
                                 ) : (
                                     <form onSubmit={handleSubmit} className="space-y-4">
+                                        {error && (
+                                            <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 text-sm">
+                                                {error}
+                                            </div>
+                                        )}
+                                        
                                         <div className="relative">
                                             <label htmlFor="fullName" className="block text-[#5A3921] text-sm font-medium mb-1">
                                                 Nombre y Apellidos
@@ -163,6 +212,7 @@ export default function Contact() {
                                                 required
                                                 className="w-full px-4 py-2 rounded-lg border border-[#bd8d4c]/30 bg-[#f9f4e8] focus:outline-none focus:ring-2 focus:ring-[#bd8d4c]/50 transition-all duration-300"
                                                 placeholder="Ingresa tu nombre completo"
+                                                disabled={isSubmitting}
                                             />
                                         </div>
                                         
@@ -179,6 +229,7 @@ export default function Contact() {
                                                 required
                                                 className="w-full px-4 py-2 rounded-lg border border-[#bd8d4c]/30 bg-[#f9f4e8] focus:outline-none focus:ring-2 focus:ring-[#bd8d4c]/50 transition-all duration-300"
                                                 placeholder="ejemplo@correo.com"
+                                                disabled={isSubmitting}
                                             />
                                         </div>
                                         
@@ -194,7 +245,8 @@ export default function Contact() {
                                                 onChange={handleChange}
                                                 required
                                                 className="w-full px-4 py-2 rounded-lg border border-[#bd8d4c]/30 bg-[#f9f4e8] focus:outline-none focus:ring-2 focus:ring-[#bd8d4c]/50 transition-all duration-300"
-                                                placeholder="(+57) 300 123 4567"
+                                                placeholder="+57 321 354 0517"
+                                                disabled={isSubmitting}
                                             />
                                         </div>
                                         
@@ -210,6 +262,7 @@ export default function Contact() {
                                                     onChange={handleChange}
                                                     required
                                                     className="w-full px-4 py-2 rounded-lg border border-[#bd8d4c]/30 bg-[#f9f4e8] focus:outline-none focus:ring-2 focus:ring-[#bd8d4c]/50 appearance-none transition-all duration-300"
+                                                    disabled={isSubmitting}
                                                 >
                                                     {contactTimeOptions.map(option => (
                                                         <option key={option.value} value={option.value}>
@@ -233,6 +286,7 @@ export default function Contact() {
                                                     onChange={handleChange}
                                                     required
                                                     className="w-4 h-4 text-[#bd8d4c] border-[#bd8d4c]/30 rounded focus:ring-[#bd8d4c]/50"
+                                                    disabled={isSubmitting}
                                                 />
                                             </div>
                                             <label htmlFor="acceptTerms" className="ml-2 text-sm text-[#5A3921]">
@@ -242,10 +296,23 @@ export default function Contact() {
                                         
                                         <button
                                             type="submit"
-                                            className="w-full bg-[#bd8d4c] hover:bg-[#a57a3b] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                                            className={`w-full bg-[#bd8d4c] hover:bg-[#a57a3b] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                            disabled={isSubmitting}
                                         >
-                                            <Calendar className="w-5 h-5 mr-2" />
-                                            Solicitar Contacto
+                                            {isSubmitting ? (
+                                                <>
+                                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    Enviando...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Calendar className="w-5 h-5 mr-2" />
+                                                    Solicitar Contacto
+                                                </>
+                                            )}
                                         </button>
                                     </form>
                                 )}
@@ -307,5 +374,6 @@ export default function Contact() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
