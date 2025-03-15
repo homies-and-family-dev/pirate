@@ -15,7 +15,7 @@ const ClarityScript = () => {
   useEffect(() => {
     try {
       // Inicializar Clarity con el ID del proyecto
-      Clarity.init(process.env.CLARITY_PROJECT_ID || 'nilxnrkx7u');
+      Clarity.init(process.env.CLARITY_PROJECT_ID || 'qoo0kksrxi');
       // Configurar eventos personalizados para el seguimiento de navegación
       const trackPageView = () => {
         Clarity.setTag("page_path", window.location.pathname);
