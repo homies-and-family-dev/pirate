@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat, Spectral_SC } from "next/font/google";
+import ClarityScript from "@/components/analytics/ClarityScript";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${spectralSC.variable} antialiased overflow-x-hidden`}
       >
+        <ClarityScript />
         <main className="flex flex-col min-h-screen">{children}</main>
       </body>
     </html>

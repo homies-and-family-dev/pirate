@@ -40,7 +40,7 @@ const InvestmentOption = ({ title, price, period, description, isHighlighted = f
       <h3 className="text-xl md:text-2xl font-spectral text-[#f2e0c8] mb-3 uppercase">{title}</h3>
       
       <div className="flex items-baseline mb-4">
-        <span className="text-2xl md:text-3xl lg:text-4xl font-spectral text-[#bd8d4c] font-bold">{price}</span>
+        <span className="text-2xl md:text-3xl lg:text-4xl font-title text-[#bd8d4c] font-bold">{price}</span>
         <span className="text-[#f2e0c8]/70 ml-2">{period}</span>
       </div>
       
@@ -260,8 +260,8 @@ export default function Invest() {
                 <Ticket className="w-6 h-6 text-[#bd8d4c]" />
               </div>
               <div>
-                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Reservas Prioritarias</h4>
-                <p className="text-[#f2e0c8]/70">Disfruta de disponibilidad preferencial para reservar atracciones, eventos y alojamiento en temporadas altas.</p>
+                <h4 className="text-lg font-spectral text-[#f2e0c8] mb-2">Reservas</h4>
+                <p className="text-[#f2e0c8]/70">Disfruta de disponibilidad para reservar atracciones, eventos y alojamiento.</p>
               </div>
             </div>
             
