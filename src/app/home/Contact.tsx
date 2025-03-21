@@ -50,7 +50,7 @@ export default function Contact() {
             };
             
             // Enviar datos a la API
-            const response = await fetch("http://api.smart-home.com.co/api/LeadForm/", {
+            const response = await fetch("https://api.smart-home.com.co/api/LeadForm/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
