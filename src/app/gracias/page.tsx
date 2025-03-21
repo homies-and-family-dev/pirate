@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { CheckCircle, MessageCircle, ArrowRight, Anchor } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -57,17 +56,7 @@ export default function GraciasPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#0d0d0d] to-[#1a1a1a] flex items-center justify-center py-8 px-3 sm:py-12 sm:px-6 lg:px-8 relative overflow-hidden">
-            {/* Fondo decorativo */}
-            <div className="absolute inset-0 opacity-10 z-0">
-                <Image 
-                    src="/images/map-bg.jpg" 
-                    alt="Mapa del tesoro" 
-                    fill 
-                    className="object-cover"
-                    priority
-                />
-            </div>
-            
+                        
             {/* Elementos decorativos */}
             <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
                 <Anchor className="w-32 h-32 text-[#bd8d4c]" />

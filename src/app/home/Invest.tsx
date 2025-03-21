@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CoinsIcon, Anchor, Clock, TrendingUp, BarChart3, Percent, Users, MapPin, Tag, Ticket } from "lucide-react";
 
@@ -60,16 +59,6 @@ const InvestmentOption = ({ title, price, period, description, isHighlighted = f
 export default function Invest() {
   return (
     <section id="financiamiento" className="py-20 md:py-28 bg-black relative overflow-hidden">
-      {/* Fondo decorativo */}
-      <div className="absolute inset-0 opacity-10 z-0">
-        <Image 
-          src="/images/map-bg.jpg" 
-          alt="Mapa del tesoro" 
-          fill 
-          className="object-cover"
-          priority
-        />
-      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16">

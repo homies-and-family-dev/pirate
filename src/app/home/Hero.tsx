@@ -24,7 +24,7 @@ export default function Hero() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [backgroundImages.length]);
 
   return (
     <section className="min-h-[90vh] relative bg-linear-gradient-to-b from-[#00000055] from-30% to-[#000000] overflow-hidden flex flex-col items-center justify-center">
@@ -50,11 +50,11 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mb-8"
+            className="relative mb-12"
           >
-            <h1 className="text-5xl md:text-8xl font-medium uppercase text-white tracking-wide leading-none mb-2 drop-shadow-lg">
+            <h1 className="text-4xl md:text-7xl font-medium text-white tracking-wide leading-tight mb-6 drop-shadow-lg">
               Pirate Paradise
-              <span className="block text-3xl md:text-5xl font-medium text-[#f2e0c8] tracking-wide leading-none drop-shadow-lg mt-2">
+              <span className="block text-2xl md:text-4xl font-medium text-[#f2e0c8] tracking-wide mt-4">
                 Tu Oportunidad de Inversión en el Mar Interior de Colombia
               </span>
             </h1>
@@ -65,9 +65,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-3xl mx-auto mb-8"
+          className="max-w-2xl mx-auto mb-12"
         >
-          <p className="text-white text-lg md:text-xl font-serif leading-relaxed drop-shadow-lg">
+          <p className="text-white text-base md:text-lg font-serif leading-relaxed drop-shadow-lg">
             Conviértete en accionista desde 13.9M COP con financiamiento flexible a 6 y 12 meses. 
             Disfruta de rentabilidad vitalicia, descuentos exclusivos en servicios y beneficios como propietario 
             del terreno en el primer proyecto turístico de lujo en Prado, Tolima.
@@ -75,7 +75,7 @@ export default function Hero() {
         </motion.div>
         <Link 
           href="/#contacto" 
-          className="inline-block bg-[#bd8d4c] border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-white px-8 py-3 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 drop-shadow-lg"
+          className="inline-block bg-[#bd8d4c] border-2 border-[#bd8d4c] hover:bg-[#bd8d4c] text-white px-8 py-3 text-base md:text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 drop-shadow-lg"
           aria-label="Solicitar más información sobre Pirate Paradise"
         >
           Reserva tu Acción Ahora
